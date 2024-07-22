@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IUser } from '../../interfaces/user/user.interface';
+import { UsersList } from '../../data/users-list';
 
 @Component({
   selector: 'app-users-list',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './users-list.component.scss'
 })
 export class UsersListComponent {
+  usersList: IUser[] = UsersList;
+  displayedColumns = ['name', 'date', 'status'];
 
+  onUserSelected(user: IUser) {
+    console.log(user);
+  }
 }
