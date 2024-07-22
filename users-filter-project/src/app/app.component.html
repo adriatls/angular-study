@@ -4,10 +4,10 @@
             <app-filter></app-filter>
         </div>
         <div class="list-container">
-            <app-users-list></app-users-list>
+            <app-users-list (onUserSelected)="onUserSelected($event)"></app-users-list>
         </div>
     </div>
     <div class="right-side">
-        <app-user-details></app-user-details>
+        <app-user-details [user]="selectedUser"></app-user-details>
     </div>
 </div>
