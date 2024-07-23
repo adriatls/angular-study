@@ -8,6 +8,6 @@
         </div>
     </div>
     <div class="right-side">
-        <app-user-details [user]="selectedUser"></app-user-details>
+        <app-user-details [user]="selectedUser" *ngIf="showUserDetails"></app-user-details>
     </div>
 </div>
