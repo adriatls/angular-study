@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { IFilterOptions } from '../../interfaces/filter-options.interface';
 
 @Component({
   selector: 'app-filter',
@@ -6,14 +7,26 @@ import { Component } from '@angular/core';
   styleUrl: './filter.component.scss',
 })
 export class FilterComponent {
+  @Output('onFilter') clickEmmiter = new EventEmitter<IFilterOptions>();
+  filterOptions: IFilterOptions = {
+    name: undefined,
+    startDate: undefined,
+    endDate: undefined,
+    status: undefined
+  }
+
   statusOptions = [
     {
-      value: 'true',
+      value: true,
       viewValue: 'Ativo',
     },
     {
-      value: 'false',
+      value: false,
       viewValue: 'Inativo',
     },
   ];
+
+  onFilter() {
+    this.clickEmmiter.emit(this.filterOptions);
+  }
 }

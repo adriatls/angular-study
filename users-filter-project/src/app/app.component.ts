@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IUser } from './interfaces/user/user.interface';
 import { UsersList } from './data/users-list';
+import { IFilterOptions } from './interfaces/filter-options.interface';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.userList = UsersList;
+  }
+
+  onFilter(emmitedValue: IFilterOptions) {
+    console.log(emmitedValue)
   }
 
   onUserSelected(emmitedValue: IUser) {

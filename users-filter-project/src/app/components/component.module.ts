@@ -5,6 +5,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { FilterComponent } from './filter/filter.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,7 @@ import { PipesModule } from '../pipes/pipes.module';
     FilterComponent,
     UsersListComponent,
   ],
-  imports: [CommonModule, AngularMaterialModule, PipesModule],
+  imports: [CommonModule, AngularMaterialModule, PipesModule, FormsModule],
   exports: [UserDetailsComponent, FilterComponent, UsersListComponent],
 })
 export class ComponentModule {}
